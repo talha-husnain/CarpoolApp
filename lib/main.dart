@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart'; // import the Firebase core p
 import 'package:frontend_futter/pages/driver_page.dart';
 import 'package:frontend_futter/pages/passenger_help.dart';
 import 'package:frontend_futter/pages/privacy_view.dart';
+import 'package:frontend_futter/pages/splash.dart';
 import 'package:frontend_futter/pages/contact_page.dart';
 import 'pages/home.dart';
 
@@ -54,7 +55,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => HomePage(),
+        '/': (context) => SplashView(),
+        '/home': (context) => HomePage(),
         '/driver_page': (context) => DriverView(),
         '/privcy': (context) => PrivacyPolicyApp(),
         '/help': (context) => HelpView(),
