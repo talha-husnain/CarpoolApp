@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -114,7 +115,13 @@ class HomePage extends StatelessWidget {
                             duration: Duration(seconds: 2),
                             child: Text(
                               'Welcome',
-                              style: Theme.of(context).textTheme.headline4,
+                              style: GoogleFonts.libreBaskerville(
+                                textStyle: TextStyle(
+                                    color: Color.fromARGB(204, 219, 173, 23),
+                                    fontSize: 40.0,
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: .5),
+                              ),
                             ),
                           ),
                           AnimatedOpacity(
@@ -122,7 +129,13 @@ class HomePage extends StatelessWidget {
                             duration: Duration(seconds: 3),
                             child: Text(
                               'to the world of Grays Essex !',
-                              style: Theme.of(context).textTheme.headline5,
+                              style: GoogleFonts.libreBaskerville(
+                                textStyle: TextStyle(
+                                    color: Color.fromARGB(204, 219, 173, 23),
+                                    fontSize: 30.0,
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: .5),
+                              ),
                             ),
                           ),
                           SizedBox(height: 10.0),
@@ -132,9 +145,10 @@ class HomePage extends StatelessWidget {
                             child: Text(
                                 'Calling all skilled drivers and caregivers! Step into the driver\'s seat of your dreams or embark on a rewarding caregiving journey with our app. Experience the joy of flexibility, incredible incentives, and a supportive community that celebrates your skills and compassion. Start your empowering journey today!',
                                 style: TextStyle(
-                                  fontSize: 15.0,
+                                  fontSize: 18.0,
                                   color: Colors.white,
                                   fontFamily: 'Arial',
+                                  fontWeight: FontWeight.bold,
                                 )),
                           ),
                         ],
@@ -148,7 +162,7 @@ class HomePage extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.grey[900],
                   border: Border.all(color: Color(0xffA68000), width: 2),
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(1),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withOpacity(0.5),
@@ -158,16 +172,20 @@ class HomePage extends StatelessWidget {
                     ),
                   ],
                 ),
-                padding: EdgeInsets.all(30.0), // Increased padding to 30
+                padding: EdgeInsets.all(10.0), // Increased padding to 30
                 margin: EdgeInsets.symmetric(
                     horizontal: 20.0, vertical: 10.0), // Add margin
                 child: Column(
                   children: [
                     Text(
-                      'You will be put in a queue when you start booking your driving test - you\'ll be told how long you\'ll need to wait once you begin. This is faster than booking by phone because the phone lines are very busy at the moment.',
-                      style: Theme.of(context).textTheme.bodyText1,
-                    ),
-                    SizedBox(height: 20.0), // Add spacing
+                        'You will be put in a queue when you start booking your driving test - you\'ll be told how long you\'ll need to wait once you begin. This is faster than booking by phone because the phone lines are very busy at the moment.',
+                        style: TextStyle(
+                          fontSize: 18.0,
+                          color: Color(0xffA68000),
+                          fontFamily: 'Arial',
+                          fontWeight: FontWeight.bold,
+                        )),
+                    // SizedBox(height: 20.0), // Add spacing
                     GestureDetector(
                       onTap: () {
                         Navigator.pushNamed(context, '/privcy');
@@ -176,7 +194,7 @@ class HomePage extends StatelessWidget {
                         'Privacy Policy',
                         style: TextStyle(
                           decoration: TextDecoration.underline,
-                          color: Colors.blue,
+                          color: Color.fromARGB(193, 120, 93, 3),
                         ),
                       ),
                     ),
@@ -208,10 +226,13 @@ class HomePage extends StatelessWidget {
                             height: 100.0,
                             width: 100.0,
                           ),
-                          Text(
-                            'Driver',
-                            style: Theme.of(context).textTheme.headline6,
-                          ),
+                          Text('Driver',
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                color: Colors.white,
+                                fontFamily: 'Arial',
+                                fontWeight: FontWeight.bold,
+                              )),
                         ],
                       ),
                     ),
@@ -238,10 +259,13 @@ class HomePage extends StatelessWidget {
                             height: 100.0,
                             width: 100.0,
                           ),
-                          Text(
-                            'Assistant',
-                            style: Theme.of(context).textTheme.headline6,
-                          ),
+                          Text('Assistant',
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                color: Colors.white,
+                                fontFamily: 'Arial',
+                                fontWeight: FontWeight.bold,
+                              )),
                         ],
                       ),
                     ),

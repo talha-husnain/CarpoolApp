@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ContactApp extends StatelessWidget {
   @override
@@ -39,123 +40,158 @@ class ContactView extends StatelessWidget {
                 ],
               ),
             ),
-            Image(
-              alignment: Alignment.center,
-              image: AssetImage('assets/images/btnimg1.jpeg'),
-            ),
-            Text(
-              'Privacy Policy of Grays Esex Ltd',
-              style: TextStyle(
-                fontSize: 24,
-                color: Color(0xFFAE8A49),
+            Container(
+              padding: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.grey[800], // Dark gray color
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image(
+                    alignment: Alignment.center,
+                    image: AssetImage('assets/images/btnimg1.jpeg'),
+                  ),
+                ],
               ),
             ),
             SizedBox(height: 20),
-
-            Text(
-              'Privacy Policy of Grays Esex Ltd',
-              style: TextStyle(
-                fontSize: 24,
-                color: Color(0xFFAE8A49),
+            Container(
+              padding: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.grey[800], // Dark gray color
+                borderRadius: BorderRadius.circular(15),
               ),
-            ),
-            SizedBox(height: 20),
-            Text(
-              'Privacy Policy of Grays Esex Ltd',
-              style: TextStyle(
-                fontSize: 24,
-                color: Color(0xFFAE8A49),
-              ),
-            ),
-
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(
-                    Color(0xFFAE8A49)), // Set the background color
-                foregroundColor: MaterialStateProperty.all<Color>(
-                    Colors.black), // Set the text color
-                textStyle: MaterialStateProperty.all<TextStyle>(
-                  TextStyle(fontSize: 16), // Set the text size
-                ),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Icon(Icons.phone_callback), // Replace with your desired icon
-                  SizedBox(width: 8), // Add spacing between icon and text
-                  Text('LindLine: +933114739822'),
-                ],
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(
-                    Color(0xFFAE8A49)), // Set the background color
-                foregroundColor: MaterialStateProperty.all<Color>(
-                    Colors.black), // Set the text color
-                textStyle: MaterialStateProperty.all<TextStyle>(
-                  TextStyle(fontSize: 16), // Set the text size
-                ),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(Icons
-                      .open_in_browser_rounded), // Replace with your desired icon
-                  SizedBox(width: 8), // Add spacing between icon and text
-                  Text('Website: www.graysessex.com'),
-                ],
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(
-                    Color(0xFFAE8A49)), // Set the background color
-                foregroundColor: MaterialStateProperty.all<Color>(
-                    Colors.black), // Set the text color
-                textStyle: MaterialStateProperty.all<TextStyle>(
-                  TextStyle(fontSize: 16), // Set the text size
-                ),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(Icons
-                      .contact_emergency), // Replace with your desired icon
-                  SizedBox(width: 8), // Add spacing between icon and text
-                  Text('WhatsApp: +933114739822'),
-                ],
-              ),
-            ),
-            SizedBox(width: 12), // Add spacing between icon and text
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(
-                    Color(0xFFAE8A49)), // Set the background color
-                foregroundColor: MaterialStateProperty.all<Color>(
-                    Colors.black), // Set the text color
-                textStyle: MaterialStateProperty.all<TextStyle>(
-                  TextStyle(fontSize: 16), // Set the text size
-                ),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(Icons.email_rounded), // Replace with your desired icon
-                  SizedBox(width: 8), // Add spacing between icon and text
-                  Text('Email: talhahusnain1061@gmail.com'),
+                  Text(
+                    'Let us have Conversation',
+                    style: GoogleFonts.vollkorn(
+                      textStyle: TextStyle(
+                          color: Color.fromARGB(204, 219, 173, 23),
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: .5),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Text(
+                    'Contact Grays Esex Ltd',
+                    style: GoogleFonts.vollkorn(
+                      textStyle: TextStyle(
+                          color: Color.fromARGB(204, 219, 173, 23),
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: .5),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Text(
+                    'Privacy Policy of Grays Esex Ltd is so well organised and fully furnished',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Color(0xFFAE8A49),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Color(0xFFAE8A49)), // Set the background color
+                      foregroundColor: MaterialStateProperty.all<Color>(
+                          Colors.black), // Set the text color
+                      textStyle: MaterialStateProperty.all<TextStyle>(
+                        TextStyle(fontSize: 16), // Set the text size
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons
+                            .phone_callback), // Replace with your desired icon
+                        SizedBox(width: 8), // Add spacing between icon and text
+                        Text('LindLine: +933114739822'),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Color(0xFFAE8A49)), // Set the background color
+                      foregroundColor: MaterialStateProperty.all<Color>(
+                          Colors.black), // Set the text color
+                      textStyle: MaterialStateProperty.all<TextStyle>(
+                        TextStyle(fontSize: 16), // Set the text size
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons
+                            .phone_callback), // Replace with your desired icon
+                        SizedBox(width: 8), // Add spacing between icon and text
+                        Text('LindLine: +933114739822'),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Color(0xFFAE8A49)), // Set the background color
+                      foregroundColor: MaterialStateProperty.all<Color>(
+                          Colors.black), // Set the text color
+                      textStyle: MaterialStateProperty.all<TextStyle>(
+                        TextStyle(fontSize: 16), // Set the text size
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons
+                            .phone_callback), // Replace with your desired icon
+                        SizedBox(width: 8), // Add spacing between icon and text
+                        Text('LindLine: +933114739822'),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Color(0xFFAE8A49)), // Set the background color
+                      foregroundColor: MaterialStateProperty.all<Color>(
+                          Colors.black), // Set the text color
+                      textStyle: MaterialStateProperty.all<TextStyle>(
+                        TextStyle(fontSize: 16), // Set the text size
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons
+                            .phone_callback), // Replace with your desired icon
+                        SizedBox(width: 8), // Add spacing between icon and text
+                        Text('LindLine: +933114739822'),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 20),
                 ],
               ),
             ),

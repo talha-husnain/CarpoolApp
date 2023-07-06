@@ -69,6 +69,7 @@ class _DriverViewState extends State<DriverView> {
                   // Handle form submission
                 },
               ),
+              SizedBox(height: 14),
               DriverDetailsRadioButtons(
                 options: ['Full time', 'Part Time'],
                 onChanged: (value) {

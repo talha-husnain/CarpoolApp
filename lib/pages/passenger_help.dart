@@ -69,6 +69,7 @@ class _HelpViewState extends State<HelpView> {
                   // Handle form submission
                 },
               ),
+              SizedBox(height: 14),
               DriverDetailsRadioButtons(
                 options: ['Full time', 'Part Time'],
                 onChanged: (value) {
