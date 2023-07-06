@@ -21,6 +21,8 @@ dependencies:
     bloc: ^8.1.2
     curved_navigation_bar: ^1.0.1
     carousel_slider: ^4.0.0
+    firebase_core: ^2.14.0
+
 
 
 
@@ -38,6 +40,9 @@ dev_dependencies:
     retrofit_generator: ^7.0.1
     json_serializable: ^6.7.0
     google_fonts: any
+    cloud_firestore: ^4.8.2
+
+
     
 flutter:
   uses-material-design: true

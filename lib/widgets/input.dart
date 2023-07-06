@@ -15,6 +15,10 @@ class DriverDetailsTextField extends StatelessWidget {
       controller: controller,
       decoration: InputDecoration(
         labelText: labelText,
+        labelStyle: TextStyle(
+          fontFamily: 'Roboto', // Your font family
+          fontWeight: FontWeight.bold, // For making the font bold
+        ),
       ),
     );
   }

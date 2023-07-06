@@ -42,7 +42,7 @@ class PrivacyPolicyPage extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: Colors.grey[800], // Dark gray color
+                  color: const Color.fromARGB(255, 129, 129, 129),
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: Column(
@@ -50,7 +50,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                   children: [
                     Image(
                       alignment: Alignment.center,
-                      image: AssetImage('assets/images/btnimg1.jpeg'),
+                      image: AssetImage('assets/images/ppimg.png'),
                     ),
                   ],
                 ),
@@ -59,7 +59,7 @@ class PrivacyPolicyPage extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: Colors.grey[800], // Dark gray color
+                  color: Color.fromARGB(255, 33, 32, 32),
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: Column(

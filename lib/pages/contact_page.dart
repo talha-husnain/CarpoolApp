@@ -43,7 +43,7 @@ class ContactView extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: Colors.grey[800], // Dark gray color
+                color: Colors.grey[200], // Dark gray color
                 borderRadius: BorderRadius.circular(15),
               ),
               child: Column(
@@ -60,7 +60,7 @@ class ContactView extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: Colors.grey[800], // Dark gray color
+                color: Colors.grey[950], // Dark gray color
                 borderRadius: BorderRadius.circular(15),
               ),
               child: Column(

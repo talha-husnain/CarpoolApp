@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:frontend_futter/widgets/primary_button.dart';
 import 'package:frontend_futter/widgets/input.dart';
-// import 'package:frontend_futter/widgets/driver_details_radio_buttons.dart';
 import 'package:frontend_futter/widgets/radio_button.dart';
 
 class DriverView extends StatefulWidget {
@@ -12,6 +12,11 @@ class DriverView extends StatefulWidget {
 }
 
 class _DriverViewState extends State<DriverView> {
+  final fullNameController = TextEditingController();
+  final contactNumberController = TextEditingController();
+  final addressController = TextEditingController();
+  final postCodeController = TextEditingController();
+
   String selectedCarModel = '';
   String selectedLicenseType = '';
 
@@ -23,7 +28,7 @@ class _DriverViewState extends State<DriverView> {
           padding: EdgeInsets.all(10),
           decoration: BoxDecoration(
             border: Border.all(
-              color: Colors.black,
+              color: Color(0xFFAE8A49),
               width: 2,
             ),
           ),
@@ -47,19 +52,19 @@ class _DriverViewState extends State<DriverView> {
               ),
               SizedBox(height: 16),
               DriverDetailsTextField(
-                controller: TextEditingController(),
+                controller: fullNameController,
                 labelText: 'Full Name',
               ),
               DriverDetailsTextField(
-                controller: TextEditingController(),
+                controller: contactNumberController,
                 labelText: 'Contact Number',
               ),
               DriverDetailsTextField(
-                controller: TextEditingController(),
+                controller: addressController,
                 labelText: 'Address',
               ),
               DriverDetailsTextField(
-                controller: TextEditingController(),
+                controller: postCodeController,
                 labelText: 'Postcode',
               ),
               SizedBox(height: 16),
@@ -113,8 +118,20 @@ class _DriverViewState extends State<DriverView> {
               SizedBox(height: 16),
               CustomButton(
                 text: 'Done',
-                onPressed: () {
-                  // Handle form submission
+                onPressed: () async {
+                  print('Data added to Firebase' + fullNameController.text);
+
+                  CollectionReference users =
+                      FirebaseFirestore.instance.collection('your_collection');
+                  await users.add({
+                    'Full Name': fullNameController.text,
+                    'Contact Number': contactNumberController.text,
+                    'Address': addressController.text,
+                    'Postcode': postCodeController.text,
+                    'Job Type': selectedCarModel,
+                    'License Type': selectedLicenseType
+                  });
+                  print('Data added to Firebase' + fullNameController.text);
                 },
               ),
             ],

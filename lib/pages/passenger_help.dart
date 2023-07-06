@@ -1,7 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend_futter/widgets/primary_button.dart';
 import 'package:frontend_futter/widgets/input.dart';
-// import 'package:frontend_futter/widgets/driver_details_radio_buttons.dart';
 import 'package:frontend_futter/widgets/radio_button.dart';
 
 class HelpView extends StatefulWidget {
@@ -12,8 +12,33 @@ class HelpView extends StatefulWidget {
 }
 
 class _HelpViewState extends State<HelpView> {
-  String selectedCarModel = '';
-  String selectedLicenseType = '';
+  String selectedJobType = '';
+
+  final fullNameController = TextEditingController();
+  final contactNumberController = TextEditingController();
+  final addressController = TextEditingController();
+  final postcodeController = TextEditingController();
+
+  @override
+  void dispose() {
+    fullNameController.dispose();
+    contactNumberController.dispose();
+    addressController.dispose();
+    postcodeController.dispose();
+    super.dispose();
+  }
+
+  Future<DocumentReference> saveDataToFirebase() async {
+    final data = {
+      'full_name': fullNameController.text,
+      'contact_number': contactNumberController.text,
+      'address': addressController.text,
+      'postcode': postcodeController.text,
+      'job_type': selectedJobType,
+    };
+
+    return FirebaseFirestore.instance.collection('user_data').add(data);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,60 +54,43 @@ class _HelpViewState extends State<HelpView> {
           ),
           child: Column(
             children: [
-              Container(
-                padding: EdgeInsets.all(10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(
-                      height: 70,
-                      width: 120,
-                      child: Image(
-                        image: AssetImage('assets/images/logo.png'),
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 16),
+              // ...
               DriverDetailsTextField(
-                controller: TextEditingController(),
+                controller: fullNameController,
                 labelText: 'Full Name',
               ),
               DriverDetailsTextField(
-                controller: TextEditingController(),
+                controller: contactNumberController,
                 labelText: 'Contact Number',
               ),
               DriverDetailsTextField(
-                controller: TextEditingController(),
+                controller: addressController,
                 labelText: 'Address',
               ),
               DriverDetailsTextField(
-                controller: TextEditingController(),
+                controller: postcodeController,
                 labelText: 'Postcode',
               ),
               SizedBox(height: 16),
-              CustomButton(
-                text: 'Job Title',
-                onPressed: () {
-                  // Handle form submission
-                },
-              ),
-              SizedBox(height: 14),
               DriverDetailsRadioButtons(
                 options: ['Full time', 'Part Time'],
                 onChanged: (value) {
                   setState(() {
-                    selectedCarModel = value;
+                    selectedJobType = value;
                   });
                 },
               ),
               SizedBox(height: 16),
               CustomButton(
                 text: 'Done',
-                onPressed: () {
-                  // Handle form submission
+                onPressed: () async {
+                  DocumentReference docRef = await saveDataToFirebase();
+
+                  // Fetch the document using the DocumentReference
+                  DocumentSnapshot docSnap = await docRef.get();
+
+                  // Print the data to the console
+                  print(docSnap.data());
                 },
               ),
             ],

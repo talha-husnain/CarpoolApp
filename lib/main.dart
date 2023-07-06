@@ -1,16 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart'; // import the Firebase core package
 import 'package:frontend_futter/pages/driver_page.dart';
 import 'package:frontend_futter/pages/passenger_help.dart';
 import 'package:frontend_futter/pages/privacy_view.dart';
 import 'package:frontend_futter/pages/contact_page.dart';
 import 'pages/home.dart';
-// import 'pages/page1.dart';
-// import 'pages/page2.dart';
-// import 'pages/page3.dart';
-// import 'pages/page4.dart';
-// import 'pages/page5.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: 'your-api-key',
+      authDomain: 'your-auth-domain',
+      databaseURL: 'your-database-url',
+      projectId: 'your-project-id',
+      storageBucket: 'your-storage-bucket',
+      messagingSenderId: 'your-messaging-sender-id',
+      appId: 'your-app-id',
+    ),
+  );
   runApp(MyApp());
 }
 
@@ -51,10 +59,6 @@ class MyApp extends StatelessWidget {
         '/privcy': (context) => PrivacyPolicyApp(),
         '/help': (context) => HelpView(),
         '/contact': (context) => ContactApp(),
-
-        // '/page3': (context) => Page3(),
-        // '/page4': (context) => Page4(),
-        // '/page5': (context) => Page5(),
       },
     );
   }
