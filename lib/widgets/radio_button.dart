@@ -27,7 +27,7 @@ class _DriverDetailsRadioButtonsState extends State<DriverDetailsRadioButtons> {
         children: widget.options.map((String option) {
           return Container(
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.black),
+              border: Border.all(color: Color.fromARGB(204, 219, 173, 23)),
               borderRadius:
                   BorderRadius.circular(10.0), // More rounded corners.
             ),

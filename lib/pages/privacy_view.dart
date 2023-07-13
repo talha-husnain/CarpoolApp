@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PrivacyPolicyApp extends StatelessWidget {
   @override
@@ -23,20 +24,16 @@ class PrivacyPolicyPage extends StatelessWidget {
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Container(
-                padding: EdgeInsets.all(10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(
-                      height: 70,
-                      width: 120,
-                      child: Image(
-                        image: AssetImage('assets/images/logo.png'),
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  ],
+                height: 70,
+                width: 120,
+                child: Image(
+                  image: AssetImage('assets/images/logo.png'),
+                  fit: BoxFit.contain,
                 ),
+              ),
+              Divider(
+                color: Color(0xffA68000),
+                thickness: 2,
               ),
               SizedBox(height: 16),
               Container(
@@ -69,7 +66,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                       'Privacy Policy of Grays Esex Ltd',
                       style: TextStyle(
                           fontSize: 24,
-                          color: Color(0xFFAE8A49),
+                          color: Color.fromARGB(255, 201, 132, 4),
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri'),
                     ),
@@ -80,7 +77,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     SizedBox(height: 20),
                     Text(
@@ -89,7 +86,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     Text(
                       'We may collect personal data you provide when using our transportation services, such as your name, contact information, address, payment details, and any other information necessary for providing the requested services.',
@@ -97,7 +94,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     SizedBox(height: 20),
                     Text(
@@ -106,7 +103,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     Text(
                       'When you use our transportation services, we may automatically collect certain information, including your IP address, device information, browsing history, and usage patterns. We use cookies and similar technologies to collect this information. You can manage your cookie preferences through your browser settings.',
@@ -114,7 +111,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     SizedBox(height: 20),
                     Text(
@@ -123,7 +120,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     Text(
                       'We collect this information to facilitate the driver hiring process and evaluate candidates for employment opportunities. By providing this information, you agree that we may use it for these purposes.',
@@ -131,7 +128,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     SizedBox(height: 20),
                     Text(
@@ -140,7 +137,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     Text(
                       'To provide transportation services, process your bookings, facilitate payments, communicate with you, and deliver customer support.',
@@ -148,7 +145,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     SizedBox(height: 20),
                     Text(
@@ -157,7 +154,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     Text(
                       'To comply with our legal obligations, such as fulfilling tax requirements and addressing disputes or claims.',
@@ -165,7 +162,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     SizedBox(height: 20),
                     Text(
@@ -174,7 +171,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     Text(
                       'To send you promotional materials, updates, and newsletters about our services if you have provided your consent to receive such communications. You may opt out of receiving marketing communications at any time.',
@@ -182,7 +179,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     SizedBox(height: 20),
                     Text(
@@ -191,7 +188,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     Text(
                       'To analyze usage patterns, conduct research, and enhance the functionality and user experience of our transportation services.',
@@ -199,7 +196,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     SizedBox(height: 20),
                     Text(
@@ -208,7 +205,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     Text(
                       'The personal information collected from drivers is solely used by our hiring department to assess and process employment applications. We do not share this information with any third parties unless required by law or with your explicit consent.',
@@ -216,7 +213,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     SizedBox(height: 20),
                     Text(
@@ -225,7 +222,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     Text(
                       'We may share your personal data with trusted third-party service providers who assist us in delivering our transportation services, such as payment processors, IT infrastructure providers, and customer support services.',
@@ -233,7 +230,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     SizedBox(height: 20),
                     Text(
@@ -242,7 +239,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     Text(
                       'We may disclose personal data if required by law, governmental request, or as necessary to protect our legal rights, enforce our policies, or respond to claims.',
@@ -250,7 +247,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     SizedBox(height: 20),
                     Text(
@@ -259,7 +256,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     Text(
                       'In the event of a merger, acquisition, or sale of all or a portion of our assets, personal data may be transferred to the acquiring entity or merged with another entity. We will notify you of any such change in ownership or control of your personal data.',
@@ -267,7 +264,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     SizedBox(height: 20),
                     Text(
@@ -276,7 +273,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     Text(
                       'Our website and App do not use cookies or tracking technologies to collect user data.',
@@ -284,7 +281,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     SizedBox(height: 20),
                     Text(
@@ -293,7 +290,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     Text(
                       'We retain your personal data for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, disclosure, alteration, or destruction.',
@@ -301,7 +298,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     SizedBox(height: 20),
                     Text(
@@ -310,7 +307,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     Text(
                       'As a user, you have certain rights concerning your personal data under the GDPR, including:',
@@ -318,7 +315,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     SizedBox(height: 10),
                     Text(
@@ -327,7 +324,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     Text(
                       'You can request access to the personal data we hold about you.',
@@ -335,7 +332,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     SizedBox(height: 10),
                     Text(
@@ -344,7 +341,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     Text(
                       'You can request correction of inaccurate or incomplete personal data.',
@@ -352,7 +349,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     SizedBox(height: 10),
                     Text(
@@ -361,7 +358,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     Text(
                       'You can request deletion of your personal data in certain circumstances.',
@@ -369,7 +366,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     SizedBox(height: 10),
                     Text(
@@ -378,7 +375,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     Text(
                       'You can object to the processing of your personal data for direct marketing purposes.',
@@ -386,7 +383,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     SizedBox(height: 10),
                     Text(
@@ -395,7 +392,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     Text(
                       'You can request to receive your personal data in a structured, commonly used, and machine-readable format.',
@@ -403,7 +400,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     SizedBox(height: 20),
                     Text(
@@ -412,7 +409,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     Text(
                       'For any questions, concerns, or inquiries regarding this Privacy Policy or your personal information, please contact us using the contact details provided at the end of this Privacy Policy.',
@@ -420,7 +417,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     SizedBox(height: 20),
                     Text(
@@ -429,7 +426,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     Text(
                       'We may update this Privacy Policy from time to time to reflect changes in our privacy practices. We will notify you of any material changes by posting the updated Privacy Policy on our website or through other communication channels.',
@@ -437,20 +434,31 @@ class PrivacyPolicyPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'calibri',
-                          color: Color(0xFFAE8A49)),
+                          color: Color.fromARGB(255, 201, 132, 4)),
                     ),
                     SizedBox(height: 10),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.pop(context);
+                        // Open WhatsApp chat
+                        // Replace 'phone_number' with the actual phone number
+                        launch('https://wa.me/01628 622955');
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                            Color(0xFFAE8A49)), // Set the background color
+                          Color.fromARGB(204, 219, 173,
+                              23), // Set the background color to green
+                        ),
+                        side: MaterialStateProperty.all<BorderSide>(
+                          BorderSide(
+                              color: Color.fromARGB(87, 27, 168, 8),
+                              width:
+                                  1.0), // Add a green border with small thickness
+                        ),
                         foregroundColor: MaterialStateProperty.all<Color>(
-                            Colors.black), // Set the text color
+                          Colors.black, // Set the text color
+                        ),
                         textStyle: MaterialStateProperty.all<TextStyle>(
-                          TextStyle(fontSize: 16), // Set the text size
+                          TextStyle(fontSize: 13), // Set the text size
                         ),
                       ),
                       child: Row(
@@ -460,33 +468,43 @@ class PrivacyPolicyPage extends StatelessWidget {
                               .phone_callback), // Replace with your desired icon
                           SizedBox(
                               width: 8), // Add spacing between icon and text
-                          Text('LindLine: +933114739822'),
+                          Text('LindLine: 01628 622955'),
                         ],
                       ),
                     ),
-                    SizedBox(height: 16), // Add spacing between widgets
-                    SizedBox(width: 12), // Add spacing between icon and text
+                    SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.pop(context);
+                        // Open email
+                        // Replace 'email_address' with the actual email address
+                        launch('mailto:info@graysessex.co.uk');
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                            Color(0xFFAE8A49)), // Set the background color
+                          Color.fromARGB(204, 219, 173,
+                              23), // Set the background color to green
+                        ),
+                        side: MaterialStateProperty.all<BorderSide>(
+                          BorderSide(
+                              color: Color.fromARGB(87, 27, 168, 8),
+                              width:
+                                  1.0), // Add a green border with small thickness
+                        ),
                         foregroundColor: MaterialStateProperty.all<Color>(
-                            Colors.black), // Set the text color
+                          Colors.black, // Set the text color
+                        ),
                         textStyle: MaterialStateProperty.all<TextStyle>(
-                          TextStyle(fontSize: 16), // Set the text size
+                          TextStyle(fontSize: 13), // Set the text size
                         ),
                       ),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(Icons
-                              .email_rounded), // Replace with your desired icon
+                              .email_outlined), // Replace with your desired icon
                           SizedBox(
                               width: 8), // Add spacing between icon and text
-                          Text('talhahusnain1061@gmail.com'),
+                          Text('Email: info@graysessex.co.uk'),
                         ],
                       ),
                     ),

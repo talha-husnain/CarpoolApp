@@ -25,7 +25,7 @@ class _DriverViewState extends State<DriverView> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(10),
+          // padding: EdgeInsets.symmetric(horizontal: 10),
           decoration: BoxDecoration(
             border: Border.all(
               color: Color(0xFFAE8A49),
@@ -35,19 +35,29 @@ class _DriverViewState extends State<DriverView> {
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.all(10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(
-                      height: 70,
-                      width: 120,
-                      child: Image(
-                        image: AssetImage('assets/images/logo.png'),
-                        fit: BoxFit.contain,
+                child: LayoutBuilder(
+                  builder: (BuildContext context, BoxConstraints constraints) {
+                    return Padding(
+                      padding: const EdgeInsets.all(0),
+                      child: Container(
+                        alignment: Alignment.center,
+
+                        color: Color.fromARGB(255, 0, 0, 0),
+                        width: constraints
+                            .maxWidth, // Set width to the maximum width available
+                        height: 50,
+                        child: Text(
+                          'Driver Details',
+                          style: TextStyle(
+                            color: Color(0xFFAE8A49),
+                            fontSize: 30,
+                            fontWeight: FontWeight.w900,
+                            fontFamily: 'stylish',
+                          ),
+                        ),
                       ),
-                    ),
-                  ],
+                    );
+                  },
                 ),
               ),
               SizedBox(height: 16),

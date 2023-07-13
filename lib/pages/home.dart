@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:frontend_futter/pages/animated_text.dart';
+import 'package:frontend_futter/pages/zoom_in_carousel.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -28,8 +28,8 @@ class HomePage extends StatelessWidget {
                     Row(
                       children: [
                         SizedBox(
-                          height: 40,
-                          width: 40,
+                          height: 30,
+                          width: 30,
                           child: InkWell(
                             onTap: () {
                               Navigator.pushNamed(context, '/privcy');
@@ -42,8 +42,8 @@ class HomePage extends StatelessWidget {
                         ),
                         SizedBox(width: 10),
                         SizedBox(
-                          height: 40,
-                          width: 40,
+                          height: 30,
+                          width: 30,
                           child: InkWell(
                             onTap: () {
                               Navigator.pushNamed(context, '/contact');
@@ -68,6 +68,7 @@ class HomePage extends StatelessWidget {
                 children: [
                   Container(
                     decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withOpacity(0.5),
@@ -77,84 +78,17 @@ class HomePage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    child: CarouselSlider(
-                      options: CarouselOptions(
-                        height: 400.0,
-                        autoPlay: true,
-                        enlargeCenterPage: true, // Expand the center image
-                        enlargeStrategy: CenterPageEnlargeStrategy
-                            .height, // Expand in horizontal direction
-                      ),
-                      items: [1, 2, 3].map((i) {
-                        return Builder(
-                          builder: (BuildContext context) {
-                            return Container(
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage('assets/images/car$i.jpg'),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            );
-                          },
-                        );
-                      }).toList(),
+                    child: ZoomInCarousel(
+                      imageList: [
+                        'assets/images/s1.jpg',
+                        'assets/images/s2.jpg',
+                        'assets/images/s4.jpg',
+                        'assets/images/s5.jpg',
+                        'assets/images/s3.jpg'
+                      ],
                     ),
                   ),
-                  Positioned(
-                    bottom: 60.0,
-                    left: 60.0,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width * 0.7,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          AnimatedOpacity(
-                            opacity: 1,
-                            duration: Duration(seconds: 2),
-                            child: Text(
-                              'Welcome',
-                              style: GoogleFonts.libreBaskerville(
-                                textStyle: TextStyle(
-                                    color: Color.fromARGB(204, 219, 173, 23),
-                                    fontSize: 40.0,
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: .5),
-                              ),
-                            ),
-                          ),
-                          AnimatedOpacity(
-                            opacity: 1,
-                            duration: Duration(seconds: 3),
-                            child: Text(
-                              'to the world of Grays Essex !',
-                              style: GoogleFonts.libreBaskerville(
-                                textStyle: TextStyle(
-                                    color: Color.fromARGB(204, 219, 173, 23),
-                                    fontSize: 30.0,
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: .5),
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 10.0),
-                          AnimatedOpacity(
-                            opacity: 1,
-                            duration: Duration(seconds: 4),
-                            child: Text(
-                                'Calling all skilled drivers and caregivers! Step into the driver\'s seat of your dreams or embark on a rewarding caregiving journey with our app. Experience the joy of flexibility, incredible incentives, and a supportive community that celebrates your skills and compassion. Start your empowering journey today!',
-                                style: TextStyle(
-                                  fontSize: 18.0,
-                                  color: Colors.white,
-                                  fontFamily: 'Arial',
-                                  fontWeight: FontWeight.bold,
-                                )),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  AnimatedTextBox(),
                 ],
               ),
               SizedBox(height: 20.0),
@@ -162,7 +96,8 @@ class HomePage extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.grey[900],
                   border: Border.all(color: Color(0xffA68000), width: 2),
-                  borderRadius: BorderRadius.circular(1),
+                  borderRadius: BorderRadius.circular(
+                      15), // Adjust the radius value as per your preference
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withOpacity(0.5),

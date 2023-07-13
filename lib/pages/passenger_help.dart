@@ -45,7 +45,7 @@ class _HelpViewState extends State<HelpView> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(10),
+          // padding: EdgeInsets.all(10),
           decoration: BoxDecoration(
             border: Border.all(
               color: Colors.black,
@@ -54,7 +54,30 @@ class _HelpViewState extends State<HelpView> {
           ),
           child: Column(
             children: [
-              // ...
+              Container(
+                child: LayoutBuilder(
+                  builder: (BuildContext context, BoxConstraints constraints) {
+                    return Container(
+                      alignment: Alignment.center,
+
+                      color: Color.fromARGB(255, 0, 0, 0),
+                      width: constraints
+                          .maxWidth, // Set width to the maximum width available
+                      height: 50,
+                      child: Text(
+                        'Driver Details',
+                        style: TextStyle(
+                          color: Color(0xFFAE8A49),
+                          fontSize: 30,
+                          fontWeight: FontWeight.w900,
+                          fontFamily: 'stylish',
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              SizedBox(height: 20),
               DriverDetailsTextField(
                 controller: fullNameController,
                 labelText: 'Full Name',
