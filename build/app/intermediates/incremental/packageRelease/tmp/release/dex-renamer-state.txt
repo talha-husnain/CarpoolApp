@@ -1,0 +1,4 @@
+#Thu Jul 13 04:00:58 PKT 2023
+base.0=C\:\\Users\\talha\\Downloads\\Flutter\\your_ride\\GE Transport\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
